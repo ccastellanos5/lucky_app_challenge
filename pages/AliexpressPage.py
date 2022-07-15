@@ -19,14 +19,17 @@ class AliexpressPage:
 
     @property
     def input_search(self):
+        """Returns the input element"""
         return self.driver.find_element(By.ID, AliexpressElements.input_search)
    
     @property
     def input_search_submit_btn(self):
+        """Returns the input submit element"""
         return self.driver.find_element(By.XPATH, AliexpressElements.input_search_submit_btn)
    
     @property
     def btn_pagination(self):
+        """Returns the second page button element"""
         element = WebDriverWait(self.driver, 5).until(
             EC.presence_of_element_located((By.XPATH, AliexpressElements.btn_pagination))
         )
@@ -34,6 +37,7 @@ class AliexpressPage:
    
     @property
     def product_quantity_info(self):
+        """Returns the quantity info element"""
         element = WebDriverWait(self.driver, 5).until(
             EC.presence_of_element_located((By.XPATH, AliexpressElements.product_quantity_info))
         )
@@ -41,6 +45,7 @@ class AliexpressPage:
    
     @property    
     def get_element_two(self):
+        """Returns the second search element"""
         element = WebDriverWait(self.driver, 5).until(
             EC.element_to_be_clickable((By.XPATH, AliexpressElements.element_two))
         )
@@ -49,12 +54,14 @@ class AliexpressPage:
 
     @property 
     def btn_close_popup(self):
+        """Returns button element to close the first popup"""
         element = WebDriverWait(self.driver, 5).until(
             EC.presence_of_element_located((By.CLASS_NAME, AliexpressElements.btn_close_popup))
         )
         return element
 
     def go_to_custom(self, link):
+        """Go to a custom page based on link"""
         self.driver.get(link)
        
 

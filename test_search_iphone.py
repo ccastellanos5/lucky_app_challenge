@@ -8,6 +8,8 @@ from utils.logger import logger
 
 class TestSearchIphone:
     def test_second_item_stock(self):
+        """Verify if the second item on the second page has stock available"""
+        
         alipage = AliexpressPage()
         logger.info("Initialize the webdriver")
 
